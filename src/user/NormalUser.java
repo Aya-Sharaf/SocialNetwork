@@ -7,7 +7,9 @@ public class NormalUser extends IUser {
 
     @Override
     public void sendFriendRequest() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println ("Send friend request to who ?");
+        
+    
     }
 
     @Override
