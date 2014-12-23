@@ -1,22 +1,41 @@
 package group;
 
+import database.GroupModel;
 import group.GroupPrivacy;
-import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.Vector;
 import user.IUser;
 
 public abstract class IGroup {
+    public String groupName;
+    public String groupprivacy;
+    public GroupPrivacy privacy;
 
-  public GroupPrivacy privacy;
-
-    public ArrayList <IUser> AllowedMembers ;
+    //public Vector  0..*;
     public GroupPrivacy myGroupPrivacy;
     public Vector  hasA;
+    
+    public GroupModel myGroupModel = new GroupModel ();
 
+    public void createGroup() {
+      System.out.println("Enter your group information ...\n" + "Name: ");
+      Scanner input = new Scanner(System.in);
+      groupName=input.next();
+      System.out.println("Privacy: ");
+      groupprivacy=input.next();
+      setPrivacy();
+     
+      
+  }
+    
   public void addMember(IUser user) {
   }
 
-  public void removeMember() {
+    /**
+     *
+     * @param user
+     */
+    public void removeMember(IUser user) {
   }
 
   public void setRole(String role) {
@@ -24,5 +43,7 @@ public abstract class IGroup {
 
   public void setPrivacy() {
   }
+
+   
 
 }
