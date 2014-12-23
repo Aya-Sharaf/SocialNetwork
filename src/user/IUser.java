@@ -9,14 +9,18 @@ import message.Message;
 import page.IPage;
 
 public abstract class IUser {
+    public String checkname;
+    public String checkPW;
+    
 
   public List<IGroup> subscribedGroups;
 
   public List<IPage> likedPages;
 
   public String name;
-
-  public String email;
+  public String password;
+  public int age;
+  public String username;
 
   public IUser user;
 
@@ -47,8 +51,10 @@ public abstract class IUser {
       System.out.println("Enter your data ...\n" + "Name: ");
       Scanner input = new Scanner(System.in);
       name=input.next();
-      System.out.println("Email: ");
-      email=input.next();
+      System.out.println("Username: ");
+      username=input.next();
+      System.out.println("Password: ");
+      password=input.next();
       myUserModel.CreateUser();
       
   }
@@ -58,14 +64,39 @@ public abstract class IUser {
   }
 
   public void login() {
-      
+      System.out.println("Enter your data ...\n" + "Username: ");
+      Scanner input = new Scanner(System.in);
+      checkname=input.next();
+      System.out.println("Password ");
+      checkPW=input.next();
+      if (checkname.equals(name) && checkPW.equals(password))
+      {
+          System.out.println ("Log in DONE :))) ");
+      }
+      else System.out.println("Wrong Username or password !!");
   }
 
   public void logout() {
       
   }
 
-  private void IUser() {
+  private void IUser() 
+  {
+      if (Instance==null)
+      {
+          Instance = new IUser () {
+
+              @Override
+              public void sendFriendRequest() {
+                  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+              }
+
+              @Override
+              public void addFriend() {
+                  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+              }
+          };
+      }
   }
 
 }
