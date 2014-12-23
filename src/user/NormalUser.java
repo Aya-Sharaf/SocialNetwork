@@ -14,7 +14,8 @@ public class NormalUser extends IUser {
 
     @Override
     public void addFriend() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        myFriends.add(user);
+        System.out.println ("Friend added");
+        }
 
 }

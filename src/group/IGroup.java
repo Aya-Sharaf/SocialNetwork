@@ -1,6 +1,7 @@
 package group;
 
 import group.GroupPrivacy;
+import java.util.ArrayList;
 import java.util.Vector;
 import user.IUser;
 
@@ -8,7 +9,7 @@ public abstract class IGroup {
 
   public GroupPrivacy privacy;
 
-    //public Vector  0..*;
+    public ArrayList <IUser> AllowedMembers ;
     public GroupPrivacy myGroupPrivacy;
     public Vector  hasA;
 

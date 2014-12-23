@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Vector;
 import group.IGroup;
 import database.UserModel;
+import java.util.ArrayList;
 import java.util.Scanner;
 import message.Message;
 import page.IPage;
@@ -37,7 +38,7 @@ public abstract class IUser {
     public Vector  myPage;
     //public Vector  myPage;
     public Vector  myIPage;
-    //public Vector  myIUser;
+    public ArrayList <IUser>  myFriends;
     //public Vector  myIUser;
     //public Vector  0..*;
     public Vector  myMessage;

@@ -8,7 +8,8 @@ public class PostModel {
   public void deletePost() {
   }
 
-  public void getPost() {
+  public void getPost(String hash) {
+      //select mn el database kol el posts el feha el hash
   }
 
   public void updatePost() {
