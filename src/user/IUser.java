@@ -18,10 +18,12 @@ public abstract class IUser {
 
   public List<IPage> likedPages;
 
-  public String name;
-  public String password;
-  public int age;
-  public String username;
+   public String Fname;
+  public String Mname;
+  public String Lname;
+  public String Password;
+  public int Age;
+  public String email;
 
   public IUser user;
 
@@ -49,32 +51,36 @@ public abstract class IUser {
   public abstract void addFriend();
 
   public void signUp() {
-      System.out.println("Enter your data ...\n" + "Name: ");
+      System.out.println("Enter your data ...\n" + "First Name: ");
       Scanner input = new Scanner(System.in);
-      name=input.next();
-      System.out.println("Username: ");
-      username=input.next();
-      System.out.println("Password: ");
-      password=input.next();
-      myUserModel.CreateUser();
+      Fname=input.next();
+      System.out.println("Enter your data ...\n" + "Middle Name: ");
+      Mname=input.next(); 
+      System.out.println("Enter your data ...\n" + "Last Name: ");
+      Lname=input.next();
+      System.out.println("Email: ");
+      email=input.next();
+      System.out.println("Enter your data ...\n" + "Password: ");
+      Password=input.next();
+      System.out.println("Enter your data ...\n" + "Age: ");
+      Age=input.nextInt();
+      
+      myUserModel.CreateUser(this);
       
   }
 
   public IUser getCurrentActiveUser() {
-      return Instance ;
+     myUserModel.getUser(this) ;
   }
 
   public void login() {
-      System.out.println("Enter your data ...\n" + "Username: ");
-      Scanner input = new Scanner(System.in);
-      checkname=input.next();
-      System.out.println("Password ");
-      checkPW=input.next();
-      if (checkname.equals(name) && checkPW.equals(password))
-      {
-          System.out.println ("Log in DONE :))) ");
-      }
-      else System.out.println("Wrong Username or password !!");
+     Scanner input = new Scanner(System.in);
+      System.out.println("Email: ");
+      email=input.next();
+      System.out.println( "Password: ");
+      Password=input.next();
+      myUserModel.FindUser(this);
+      
   }
 
   public void logout() {
